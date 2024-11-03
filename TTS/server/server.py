@@ -32,7 +32,7 @@ def create_argparser():
     parser.add_argument(
         "--model_name",
         type=str,
-        default="tts_models/en/ljspeech/tacotron2-DDC",
+        default="tts_models/es/mai/tacotron2-DDC",
         help="Name of one of the pre-trained tts models in format <language>/<dataset>/<model_name>",
     )
     parser.add_argument("--vocoder_name", type=str, default=None, help="name of one of the released vocoder models.")
@@ -54,9 +54,9 @@ def create_argparser():
     parser.add_argument("--vocoder_config_path", type=str, help="Path to vocoder model config file.", default=None)
     parser.add_argument("--speakers_file_path", type=str, help="JSON file for multi-speaker model.", default=None)
     parser.add_argument("--port", type=int, default=5002, help="port to listen on.")
-    parser.add_argument("--use_cuda", type=convert_boolean, default=False, help="true to use CUDA.")
-    parser.add_argument("--debug", type=convert_boolean, default=False, help="true to enable Flask debug mode.")
-    parser.add_argument("--show_details", type=convert_boolean, default=False, help="Generate model detail page.")
+    parser.add_argument("--use_cuda", type=convert_boolean, default=True, help="true to use CUDA.")
+    parser.add_argument("--debug", type=convert_boolean, default=True, help="true to enable Flask debug mode.")
+    parser.add_argument("--show_details", type=convert_boolean, default=True, help="Generate model detail page.")
     return parser
 
 
